@@ -1,0 +1,31 @@
+# Source: https://github.com/hashicorp/learn-terraform-github-actions/blob/main/.github/workflows/terraform.yml
+# Docs:
+#   - https://learn.hashicorp.com/tutorials/terraform/github-actions
+#   - https://github.com/hashicorp/setup-terraform
+#   - https://github.com/marketplace/actions/azure-login#configure-deployment-credentials
+
+name: "Terraform - Production"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "_modules/**"
+      - "prod/**"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+
+jobs:
+  terraform-prod:
+    uses: ./.github/workflows/tpl_terraform_basic.yaml
+    with:
+      terraform-path: prod
+    secrets: inherit
