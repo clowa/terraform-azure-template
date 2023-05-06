@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "18:00"
+      timezone: "Europe/Berlin"
+    assignees:
+      - clowa
+
+  #########################################
+  # Terraform
+  - package-ecosystem: "terraform"
+    directory: "/core"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 3
+    assignees:
+      - clowa
+
+  - package-ecosystem: "terraform"
+    directory: "/prod"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 3
+    assignees:
+      - clowa
