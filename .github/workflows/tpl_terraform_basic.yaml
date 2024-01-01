@@ -68,7 +68,7 @@ jobs:
         run: terraform plan -no-color -input=false -out ${{ runner.temp }}/terraform.plan
         continue-on-error: true
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.environment }}-terraform.tfplan
           path: ${{ runner.temp }}/terraform.plan

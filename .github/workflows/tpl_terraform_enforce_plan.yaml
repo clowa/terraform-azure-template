@@ -77,7 +77,7 @@ jobs:
 
       - name: Save Artifact
         id: save-artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.environment }}-terraform.tfplan
           path: ${{ runner.temp }}/terraform.plan
