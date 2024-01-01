@@ -138,7 +138,7 @@ jobs:
         working-directory: ${{ inputs.terraform-path }}
         run: terraform init
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: ${{ inputs.environment }}-terraform.tfplan
           path: ${{ runner.temp }}/terraform.plan
