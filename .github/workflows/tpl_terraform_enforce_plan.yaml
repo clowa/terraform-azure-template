@@ -145,7 +145,7 @@ jobs:
 
       - name: Download Plan
         id: download-plan
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           github_token: ${{ secrets.REPO_SCOPED_TOKEN }} #! This has to be a repo scoped personal access token
           ## Requires workflow file name to be like terraform folder name.
