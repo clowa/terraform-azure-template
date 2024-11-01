@@ -84,7 +84,7 @@ jobs:
 
       # If this is a PR post the changes
       - name: Comment PR with planned changes
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         if: github.ref != 'refs/heads/main'
         continue-on-error: true
         with:
@@ -168,7 +168,7 @@ jobs:
 
       # If this is a PR post the changes
       - name: Comment PR with planned changes
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         continue-on-error: true
         with:
           pr_number: ${{ steps.pr-id.outputs.PR_NUMBER }}
